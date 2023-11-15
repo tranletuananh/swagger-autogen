@@ -364,6 +364,8 @@ const init = async (outputFile, endpointsFiles, data) => {
         }
     } catch (err) {
         if (!options.disableLogs) {
+            console.log(err);
+            console.trace();
             console.log('Swagger-autogen:', '\x1b[31m', 'Failed ' + symbols.failed, '\x1b[0m');
         }
         return { success: false, data: null };
